@@ -32,7 +32,6 @@ void SHA1_Init(SHA1_CTX *context)
     context->buffer_length = 0;
 }
 
-
 void SHA1_Transform(SHA1_CTX *context, const uint8_t *data) 
 {
     uint32_t a, b, c, d, e, f, k, temp;
@@ -93,7 +92,6 @@ void SHA1_Transform(SHA1_CTX *context, const uint8_t *data)
     context->h4 += e;
 }
 
-
 void SHA1_Update(SHA1_CTX *context, const uint8_t *data, size_t len) 
 {
     size_t i;
@@ -114,7 +112,6 @@ void SHA1_Update(SHA1_CTX *context, const uint8_t *data, size_t len)
         }
     }
 }
-
 
 void SHA1_Final(SHA1_CTX *context, uint8_t *digest) 
 {
@@ -153,7 +150,6 @@ void SHA1_Final(SHA1_CTX *context, uint8_t *digest)
     digest[18] = (context->h4 >> 8) & 0xFF;
     digest[19] = context->h4 & 0xFF;
 }
-
 
 void print_sha1_hash(uint8_t *digest) 
 {
